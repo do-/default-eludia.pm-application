@@ -1,0 +1,71 @@
+<!--
+ * FCKeditor - The text editor for internet
+ * Copyright (C) 2003 Frederico Caldeira Knabben
+ *
+ * Licensed under the terms of the GNU Lesser General Public License
+ * (http://www.opensource.org/licenses/lgpl-license.php)
+ *
+ * For further information go to http://www.fredck.com/FCKeditor/ 
+ * or contact fckeditor@fredck.com.
+ *
+ * browse.html: Sample server images browser for the editor.
+ *
+ * Authors:
+ *   Frederico Caldeira Knabben (fckeditor@fredck.com)
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE>FCKeditor - Image Browser</TITLE>
+		<META name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<STYLE type="text/css">
+			BODY, TD, INPUT { FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif }
+		</STYLE>
+		<SCRIPT language="javascript">
+var sImagesPath  = document.location.pathname.substring(0,document.location.pathname.lastIndexOf('/')+1) + 'images/' ;
+var sActiveImage = "" ;
+
+function getImage(imageName)
+{
+	sActiveImage = sImagesPath + imageName + ".jpg" ;
+	imgPreview.src = sActiveImage ;
+}
+
+function ok()
+{	
+	window.setImage(sActiveImage) ;
+	window.close() ;
+}
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+		<TABLE height="100%" cellspacing="0" cellpadding="0" width="100%" border="0">
+			<TR>
+				<TD height="100%">
+					<TABLE height="100%" cellspacing="5" cellpadding="0" width="100%" border="0">
+						<TR>
+							<TD align="middle" width="50%">
+								Select the image to load<BR>
+								<BR>
+								<A href="javascript:getImage('nature');">Nature</A><BR>
+								<A href="javascript:getImage('money');">Money</A><BR>
+								<A href="javascript:getImage('pen');">Pen</A><BR>
+								<A href="javascript:getImage('spanner');">Spanner</A><BR>
+								<A href="javascript:getImage('techcable');">Tech Cable</A><BR>
+								<A href="javascript:getImage('techpcb');">Tech PCB</A></TD>
+							<TD align="middle" width="50%">
+								<IMG src="images/spacer.gif" id="imgPreview">
+							</TD>
+						</TR>
+					</TABLE>
+				</TD>
+			</TR>
+			<TR>
+				<TD valign="bottom" align="middle">
+					<INPUT style="WIDTH: 80px" type="button" value="OK"     onclick="ok();"> &nbsp;&nbsp;&nbsp;&nbsp;
+					<INPUT style="WIDTH: 80px" type="button" value="Cancel" onclick="window.close();"><BR>
+				</TD>
+			</TR>
+		</TABLE>
+	</BODY>
+</HTML>

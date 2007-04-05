@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * FCKeditor - The text editor for internet
+ * Copyright (C) 2003 Frederico Caldeira Knabben
+ *
+ * Licensed under the terms of the GNU Lesser General Public License
+ * (http://www.opensource.org/licenses/lgpl-license.php)
+ *
+ * For further information go to http://www.fredck.com/FCKeditor/ 
+ * or contact fckeditor@fredck.com.
+ *
+ * upload.xml: XML file used by "upload.aspx" to store a counter for
+ *   the uploaded images.
+ *
+ * Authors:
+ *   Frederico Caldeira Knabben (fckeditor@fredck.com)
+-->
+<FCKeditor_Upload>
+  <FileNameCounter>21</FileNameCounter>
+</FCKeditor_Upload>

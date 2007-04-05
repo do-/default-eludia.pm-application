@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" > <!--
+ * FCKeditor - The text editor for internet
+ * Copyright (C) 2003 Frederico Caldeira Knabben
+ *
+ * Licensed under the terms of the GNU Lesser General Public License
+ * (http://www.opensource.org/licenses/lgpl-license.php)
+ *
+ * For further information go to http://www.fredck.com/FCKeditor/ 
+ * or contact fckeditor@fredck.com.
+ *
+ * browse.html: Sample server images browser for the editor.
+ *
+ * Authors:
+ *   Frederico Caldeira Knabben (fckeditor@fredck.com)
+-->
+<HTML>
+	<HEAD>
+		<TITLE>FCKeditor - Image Browser</TITLE>
+		<META name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<STYLE type="text/css"> BODY, TD, INPUT { FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif }
+		</STYLE>
+		<SCRIPT language="javascript">
+var sImagesPath  = document.location.pathname.substring(0,document.location.pathname.lastIndexOf('/')+1) + 'docs/' ;
+
+function getDoc(fileName)
+{
+	window.setImage( sImagesPath + fileName ) ;
+	window.close() ;
+}
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+		<TABLE height="100%" cellspacing="5" cellpadding="0" width="100%" border="0">
+			<TR>
+				<TD align="middle" width="50%">
+					Select a file to link<BR>
+					<BR>
+					<BR>
+					<TABLE cellSpacing="1" cellPadding="1" width="80%" align="center" border="0">
+							<TR><TD><A href="javascript:getDoc('EditorSample.doc');">EditorSample.doc</A></TD><TD align="right">132 kb</TD></TR>
+							<TR><TD><A href="javascript:getDoc('ThisIsAPresentation.ppt');">ThisIsAPresentation.ppt</A></TD><TD align="right">532 kb</TD></TR>
+							<TR><TD><A href="javascript:getDoc('Test.doc');">Test.doc</A></TD><TD align="right">1.231 kb</TD></TR>
+							<TR><TD><A href="javascript:getDoc('MyFile.doc');">MyFile.doc</A></TD><TD align="right">82 kb</TD></TR>
+							<TR><TD><A href="javascript:getDoc('Anothersample.txt');">Anothersample.txt</A></TD><TD align="right">4.532 kb</TD></TR>
+							<TR><TD><A href="javascript:getDoc('LastReport.xsl');">LastReport.xsl</A></TD><TD align="right">49 kb</TD></TR>
+							<TR><TD><A href="javascript:getDoc('LastRelease.html');">LastRelease.html</A></TD><TD align="right">783 kb</TD></TR>
+							<TR><TD><A href="javascript:getDoc('LastFile.ppt');">LastFile.ppt</A></TD><TD align="right">632 kb</TD></TR>
+							<TR><TD><A href="javascript:getDoc('License.txt');">License.txt</A></TD><TD align="right">2.432 kb</TD></TR>
+					</TABLE>
+				</TD>
+			</TR>
+		</TABLE>
+	</BODY>
+</HTML>
