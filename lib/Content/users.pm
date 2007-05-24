@@ -4,7 +4,7 @@ sub get_item_of_users {
 
 	my $item = sql_select_hash ("users");
 	
-	$_REQUEST {__read_only} ||= !($_REQUEST {__edit} || $item -> {fake});
+	$_REQUEST {__read_only} ||= !($_REQUEST {__edit} || $item -> {fake} > 0);
 
 	add_vocabularies ($item, 'roles');
 
@@ -21,8 +21,6 @@ sub get_item_of_users {
 
 sub do_update_users {
 	
-	$_REQUEST {_label} = $_REQUEST {_f} . ' ' . $_REQUEST {_i} . ' ' . $_REQUEST {_o};
-
 	sql_do_update ('users', [qw(f i o label login id_role)]);
 
 	$_REQUEST {_password} and sql_do ("UPDATE users SET password=PASSWORD(?) WHERE id=?", $_REQUEST {_password}, $_REQUEST {id});
@@ -35,19 +33,11 @@ sub validate_update_users {
 
 	$_REQUEST {_id_role} or return "#_id_role#:Вы забыли указать роль";
 	
+	$_REQUEST {_label} = $_REQUEST {_f} . ' ' . $_REQUEST {_i} . ' ' . $_REQUEST {_o};
+
 	vld_unique ('users');
 
 	return $cnt ? 'duplicate_login' : undef;
-	
-}
-
-################################################################################
-
-sub do_delete_users {
-
-	sql_do_delete ('users');
-	
-	delete $_REQUEST {id};
 	
 }
 
@@ -69,7 +59,7 @@ sub select_users {
 	
 	my $start = $_REQUEST {start} + 0;
 	
-	my ($users, $cnt)= sql_select_all_cnt (<<EOS, $q, $q);
+	my ($users, $cnt)= sql_select_all_cnt (<<EOS, $q, $q, {fake => 'users'});
 		SELECT
 			users.*
 			, roles.label AS role_label
@@ -78,7 +68,6 @@ sub select_users {
 			LEFT JOIN roles ON users.id_role = roles.id
 		WHERE
 			(users.label LIKE ? or users.login LIKE ?)
-			and users.fake = 0
 		ORDER BY
 			users.label
 		LIMIT
