@@ -13,7 +13,7 @@ our $conf = {
 		-decimal_point   => ',',
 	},
 	
-	core_auto_esc   => 1,
+	core_auto_esc   => 2,
 	core_auto_edit  => 1,
 	core_show_icons => 1,
 	core_hide_row_buttons => 2,
