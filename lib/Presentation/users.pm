@@ -6,15 +6,7 @@ sub draw_item_of_users {
 	
 	draw_form ({
 	
-		right_buttons => [
-			{
-				preset  => 'delete',
-				href    => {action => 'delete'},
-				target  => 'invisible',
-				confirm => '¬ы уверены, что хотите удалить этого пользовател€?',
-				off     => !$_REQUEST {__read_only} || $data -> {id} == $_USER -> {id},			
-			},		
-		],
+		right_buttons => [ del ($data) ],
 	
 	}, $data,
 		[
@@ -127,6 +119,8 @@ sub draw_users {
 						total   => $data -> {cnt},
 						portion => $data -> {portion},
 					},
+					
+					fake_select (),
 					
 				],
 			

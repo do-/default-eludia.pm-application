@@ -4,7 +4,6 @@ our $conf = {
 	
 	portion => 15,
 	session_timeout => 30,
-	lock_timeout => 10,
 	
 	max_len => 50,
 	
@@ -17,7 +16,7 @@ our $conf = {
 	core_auto_edit  => 1,
 	core_show_icons => 1,
 	core_hide_row_buttons => 2,
-	core_recycle_ids => 1,
+	core_recycle_ids => 0,
 	core_unlimit_xls => 1,
 	
 	kb_options_menu    => {alt => 1},
@@ -35,14 +34,6 @@ our $conf = {
 		}
 	
 	}
-
-};
-
-our $error_messages = {
-
-	'update_roles_duplicate_name' => 'Символическое имя \'$_REQUEST{_name}\' уже занято',
-
-	'update_users_duplicate_login' => 'Логин \'$_REQUEST{_login}\' уже занят',
 
 };
 
