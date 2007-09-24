@@ -496,6 +496,9 @@ dTree.prototype.openTo = function(nId, bSelect, bFirst) {
 //	alert (nId);
 
 	var cn=this.aNodes[nId];
+	
+	if (!cn)
+		return;
 
 	if (cn.pid==this.root.id || !cn._p) {
 		if (bSelect)
