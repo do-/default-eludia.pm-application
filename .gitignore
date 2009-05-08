@@ -1,0 +1,6 @@
+conf
+logs
+docroot/i/_skins/
+docroot/i/upload
+docroot/dbm/
+docroot/session_access_logs/
