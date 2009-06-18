@@ -1,5 +1,6 @@
 conf
 logs
+docroot/i/_mbox/
 docroot/i/_skins/
 docroot/i/upload
 docroot/dbm/
