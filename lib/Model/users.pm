@@ -6,5 +6,5 @@ columns => {
 },
 
 data => [
-	{id => 1, name => 'Условный админ', login => 'admin', label => 'Условный админ', password => '606706ad6665ce1e', id_role => 1},
+	{id => 1, login => 'admin', label => 'Условный админ', password => '606706ad6665ce1e', id_role => 1},
 ],
