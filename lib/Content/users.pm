@@ -79,6 +79,8 @@ sub validate_update_users {
 
 	vld_unique ('users', {field => 'login'}) or return "#_login#:Login '$_REQUEST{_login}' уже занят";
 	
+	undef;
+	
 }
 
 ################################################################################
